@@ -27,9 +27,16 @@ Personel tayin uygulama projesi kapsamında, kullanıcı kurum tarafından kendi
 - Tüm işlemler sorunsuz şekilde gerçekleştirildikten sonra locahost:3000 portu üzerinden projeyi canlı olarak görüntüleyebilirsiniz. 
 - Giriş yapabilmek için ab204376 sicil numarası, 12345678 şifre olarak belirlenmiştir.
 
+## Proje Mimari Yapısı
+
+- Model - View - Controller (MVC)
+- Model (Veri Katmanı)
+- View (Görünüm Katmanı)
+- Controller (Control Katmanı)
+
 ## Projede Kullanılan Teknolojiler
 
-- Laravel 12
+- Laravel 12 (Routing, MiddleWare, Facades, Eloquent ORM, Blade Template Engine, Artisan CLI)
 - TailwindCss
 - Bootstrap Icons
 - Vite
