@@ -31,7 +31,7 @@ class OperationsController extends Controller
         $email = 'ab204376@adalet.gov.tr';
         $company = 'Adalet Bakanlığı - Gaziosmanpaşa Cumhuriyet Başsavcılığı';
         $phone = '0546 500 70 16';
-        $address = 'Fatih Mah. 203 Sk. No:29 D:6 Esenler / İstanbul';
+        $address = 'Fatih Mah. 203 Sk. No:X D:X Esenler / İstanbul';
         $vac = '30';
         $kadro = '7/2';
         $startyear = '10.02.2017';

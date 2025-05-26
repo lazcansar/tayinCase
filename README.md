@@ -22,7 +22,10 @@ Personel tayin uygulama projesi kapsamında, kullanıcı kurum tarafından kendi
 - Projeyi çalıştırmak için tayinCase.zip içerisinde bulunan sql dosyasını PhpMyAdmin paneli üzerinden veya komut satırı yardımı ile tayin adında oluşturacağınız veritabanı tablosunun içerisine import edin.
 - Devamında "php artisan migrate" komutu ile veritabanı migration işlemlerinin tamamlanmasını bekleyin.
 - Bu işlem sorunsuz tamamlandığında "php artisan serve" ve "npm run dev" komutlarını projenin kök dizini içerisinde iki farklı terminal sekmesi kullanarak ayrı ayrı çalıştırın.
+- localhost:3000/kullanici-olustur sayfasına giderek otomatik kullanıcı oluşturun.
+- localhost:3000/kullanici-detay-olustur sayfasına giderek kullanıcı detaylarını oluşturun.
 - Tüm işlemler sorunsuz şekilde gerçekleştirildikten sonra locahost:3000 portu üzerinden projeyi canlı olarak görüntüleyebilirsiniz. 
+- Giriş yapabilmek için ab204376 sicil numarası, 12345678 şifre olarak belirlenmiştir.
 
 ## Projede Kullanılan Teknolojiler
 
