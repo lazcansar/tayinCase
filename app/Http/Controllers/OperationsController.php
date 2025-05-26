@@ -26,16 +26,23 @@ class OperationsController extends Controller
 
     // Auth
     public function loginUser(Request $request): RedirectResponse {
+        $customMessages = [
+            'name.required' => 'Sicil No girilmesi zorunludur!',
+            'password.required' => 'Şifre alanı zorunludur!',
+            'password.min' => 'Şifreniz en az :min karakter olmalıdır.',
+        ];
+
+
         $credentials = $request->validate([
             'name' => ['required', 'string'],
-            'password' => ['required', 'string'],
-            ]);
+            'password' => ['required', 'string', 'min:6'],
+            ], $customMessages);
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->intended('/');
         }
         return back()->withErrors([
-            'name' => 'Kayıtlı sicil numarası bulunamadı!',
+            'name' => 'Girilen sicil numarası veya şifre hatalıdır. Lütfen bilgilerinizi kontrol edip tekrar deneyin.',
         ])->onlyInput('name');
 
     }
