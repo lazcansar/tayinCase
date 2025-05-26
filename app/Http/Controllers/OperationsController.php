@@ -35,7 +35,7 @@ class OperationsController extends Controller
 
         $credentials = $request->validate([
             'name' => ['required', 'string'],
-            'password' => ['required', 'string', 'min:6'],
+            'password' => ['required', 'string', 'min:8'],
             ], $customMessages);
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
