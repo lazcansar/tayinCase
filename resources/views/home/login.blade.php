@@ -21,10 +21,10 @@
                         <button class="px-4 py-2 bg-sky-600 text-white rounded transition hover:bg-sky-500 cursor-pointer">Giriş Yap</button>
 
                         @if($errors->any())
-                            <div class="bg-amber-800 px-4 py-2 text-white rounded">
-                                <ul>
+                            <div class="bg-amber-800 p-4 text-white rounded">
+                                <ul class="flex flex-col gap-2">
                                     @foreach($errors->all() as $error)
-                                        <li>{{ $error }}</li>
+                                        <li><i class="bi bi-info-circle"></i> {{ $error }}</li>
                                     @endforeach
                                 </ul>
                             </div>
