@@ -1,7 +1,11 @@
 @extends('theme')
 @section('title'){{'Giriş Paneli'}}@endsection
 @section('main')
-
+    <section class="bg-sky-800 py-4">
+        <div class="container mx-auto">
+            <h1 class="text-white text-2xl text-center">Personel Tayin Talep Ekranı</h1>
+        </div>
+    </section>
     <section class="py-8">
         <div class="container mx-auto flex items-center justify-center">
             <div class="min-w-xl flex flex-col items-center justify-center border border-gray-100 shadow-lg rounded p-4">

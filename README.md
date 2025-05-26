@@ -5,6 +5,7 @@ Personel tayin uygulama projesi kapsamında, kullanıcı kurum tarafından kendi
 ## Projenin Çalışması İçin Gerekli Yazılımlar
 
 - Proje mysql veritabanı ile çalışır. Bunun için sisteminizde MySQL kurulu olmak zorundadır.
+- Xampp ile PHP ve MYSQL kurulumu yapılabilir.
 - PHP 8.2 sürümü veya daha üzeri gereklidir. 
 
 ## Projenin Kurulumu

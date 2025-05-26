@@ -21,8 +21,17 @@ class OperationsController extends Controller
             'email' => $email,
             'password' => Hash::make($password),
         ]);
+    }
+    // Register User Detail
+    public function regUserDetail()
+    {
+        $name = 'Abdullah';
+        $surname = 'GÖKSAL';
+        $email = 'ab204376@adalet.gov.tr';
+        $company = 'Adalet Bakanlığı';
 
     }
+
 
     // Auth
     public function loginUser(Request $request): RedirectResponse {

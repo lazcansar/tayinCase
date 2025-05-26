@@ -40,11 +40,6 @@
             </div>
         </div>
     </section>
-    <section class="bg-sky-800 py-4">
-        <div class="container mx-auto">
-            <h1 class="text-white text-2xl text-center">Personel Tayin Talep Ekranı</h1>
-        </div>
-    </section>
 </header>
 
 @yield('main')
