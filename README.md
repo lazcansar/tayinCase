@@ -23,7 +23,7 @@ Personel tayin uygulama projesi kapsamında, kullanıcı kurum tarafından kendi
 - Devamında "php artisan migrate" komutu ile veritabanı migration işlemlerinin tamamlanmasını bekleyin.
 - Bu işlem sorunsuz tamamlandığında "php artisan serve" ve "npm run dev" komutlarını projenin kök dizini içerisinde iki farklı terminal sekmesi kullanarak ayrı ayrı çalıştırın.
 - localhost:3000/kullanici-olustur sayfasına giderek otomatik kullanıcı oluşturun.
-- localhost:3000/kullanici-detay-olustur sayfasına giderek kullanıcı detaylarını oluşturun.
+- localhost:3000/kullanici-detay-olustur sayfasına giderek otomatik kullanıcı detaylarını oluşturun.
 - Tüm işlemler sorunsuz şekilde gerçekleştirildikten sonra locahost:3000 portu üzerinden projeyi canlı olarak görüntüleyebilirsiniz. 
 - Giriş yapabilmek için ab204376 sicil numarası, 12345678 şifre olarak belirlenmiştir.
 
