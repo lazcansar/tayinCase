@@ -5,7 +5,10 @@
     <section class="bg-sky-800 py-4">
         <div class="container mx-auto">
             @auth
-                <h1 class="text-white text-2xl text-center"> {{ Auth::user()->name }} - Personel Ekranı </h1>
+                <div class="flex flex-row items-center justify-between">
+                    <h1 class="text-white text-2xl text-center"> Personel Ekranı </h1>
+                    <a href="{{ route('logout') }}" class="text-gray-800 border border-gray-300 px-2 py-1 rounded bg-sky-100 transition hover:bg-sky-50"><i class="bi bi-door-closed"></i> Çıkış Yap</a>
+                </div>
             @else
                 <h1 class="text-white text-2xl text-center">Personel Ekranı</h1>
             @endauth
@@ -15,12 +18,20 @@
     <section class="my-8">
         <div class="container mx-auto">
             <div class="border border-gray-200 shadow p-4 rounded">
-                <div class="flex flex-row flex-wrap items-center justify-between">
+                <h2 class="text-xl p-4 bg-sky-500 text-white rounded mb-4">Personel Bilgileri</h2>
+                <div class="flex flex-row flex-wrap items-center justify-between text-gray-800">
                     <div class="w-full md:w-1/2 p-2">
                         <div class="px-4 py-2 bg-sky-100 rounded">
                             <strong>Ad Soyad:</strong> {{ $userDetail->name }} {{ $userDetail->surname }}
                         </div>
                     </div>
+
+                    <div class="w-full md:w-1/2 p-2">
+                        <div class="px-4 py-2 bg-sky-100 rounded">
+                            <strong>Sicil No:</strong> {{ Auth::user()->name }}
+                        </div>
+                    </div>
+
                     <div class="w-full md:w-1/2 p-2">
                         <div class="px-4 py-2 bg-sky-100 rounded">
                             <strong>E-Mail:</strong> {{ $userDetail->email }}
@@ -64,6 +75,15 @@
                 </div>
             </div>
 
+        </div>
+    </section>
+
+    <section class="my-8">
+        <div class="container mx-auto">
+            <div class="border border-gray-200 shadow p-4 rounded">
+                <h2 class="text-xl p-4 bg-sky-500 text-white rounded mb-4">Talep Ekranı</h2>
+                <a href="" class="px-4 py-2 inline-block bg-teal-700 transition hover:bg-teal-600 text-white">Tayin Talebinde Bulun!</a>
+            </div>
         </div>
     </section>
 
