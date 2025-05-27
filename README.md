@@ -19,10 +19,9 @@ Personel tayin uygulama projesi kapsamında, kullanıcı kurum tarafından kendi
 ## Projenin Çalıştırılması
 
 - Proje PHP Framework'u olan Laravel 12 sürümü ile hazırlanmıştır.
-- Projeyi çalıştırmak için tayinCase.zip içerisinde bulunan sql dosyasını PhpMyAdmin paneli üzerinden veya komut satırı yardımı ile tayin adında oluşturacağınız veritabanı tablosunun içerisine import edin.
+- Projeyi çalıştırmak için tayinCase.zip içerisinde bulunan <strong>SQL Dosyasını</strong> PhpMyAdmin paneli üzerinden veya komut satırı yardımı ile tayin adında oluşturacağınız veritabanı tablosunun içerisine import edin.
 - Devamında "php artisan migrate" komutu ile veritabanı migration işlemlerinin tamamlanmasını bekleyin.
 - Bu işlem sorunsuz tamamlandığında "php artisan serve" ve "npm run dev" komutlarını projenin kök dizini içerisinde iki farklı terminal sekmesi kullanarak ayrı ayrı çalıştırın.
-- Ekte yer alan <strong>SQL Dosyasını</strong> veritabanına import edin.
 - Tüm işlemler sorunsuz şekilde gerçekleştirildikten sonra locahost:3000 portu üzerinden projeyi canlı olarak görüntüleyebilirsiniz. 
 - Giriş yapabilmek için standar kullanıcı ab204376 sicil numarası, 12345678 şifre olarak belirlenmiştir.
 - Admin olarak giriş yapabilmek için ab1 sicil numarası, 12345678 şifre olan belirlenmiştir.
@@ -42,3 +41,17 @@ Personel tayin uygulama projesi kapsamında, kullanıcı kurum tarafından kendi
 - Vite
 - JavaScript
 
+## Güvenlik Önlemleri
+
+- Validate ile input alanına girilen verilerin güvenliği sağlanmıştır.
+- Kayıtlı kullanıcıların şifreleri veritabanında hash algoritması kullanılarak saklanmaktadır.
+- Input alanları için hatalı veri girilmesi halinde veya girilen verilerin veritabanı kayıtları ile eşlememesi halinde hata mesajı gösterilmektedir.
+- MiddleWare ile giriş yapmamış kullanıcıların sayfalara erişimi engellenmiştir.
+
+## UI ve UX
+
+- Kurumsal görsel bütünlüğün sağlanmasına adına soft renkler tercih edilmiştir. 
+- Tayin talep ekranında yer alan breadcrumb alanı kullanıcıya hangi sayfada bulunduğunu gösterir ve bir önceki sayfaya dönmesine imkan sağlar.
+- Input alanlarında yapılan post işlemleri sonucu kullanıcıya işlem sonucuna ilişkin açıklayıcı geri bildirim yapılmaktadır.
+- Responsive tasarım ile tüm ekran boyutlarında uyumlu görüntüleme sağlanır.
+- TailwindCss kütüphanesi kullanılarak Custom CSS kod yazımı minimum düzeyde tutulmuştur.
