@@ -80,11 +80,15 @@ class OperationsController extends Controller
                 'user_name' => Auth::user()->name,
                 'ip_address' => $request->ip(),
                 'session_id' => $request->session()->getId(),
-
             ]);
 
             return redirect()->intended('/');
         }
+        Log::error('Giriş işlemi hatalı!', [
+            'ip_address' => $request->ip(),
+            'session_id' => $request->session()->getId(),
+            'request_all' => $request->all(),
+        ]);
         return back()->withErrors([
             'name' => 'Girilen sicil numarası veya şifre hatalıdır. Lütfen bilgilerinizi kontrol edip tekrar deneyin.',
         ])->onlyInput('name');

@@ -47,6 +47,11 @@ Personel tayin uygulama projesi kapsamında, kullanıcı kurum tarafından kendi
 - Input alanları için hatalı veri girilmesi halinde veya girilen verilerin veritabanı kayıtları ile eşlememesi halinde hata mesajı gösterilmektedir.
 - MiddleWare ile giriş yapmamış kullanıcıların sayfalara erişimi engellenmiştir.
 
+## LOG Kayıtları
+
+- Başarılı giriş, hatalı giriş işlemleri loglanmaktadır. Yine tayin talebi formu oluşturulduğunda loglama yapılmaktadır.
+- Log dosyasını görüntülemek için /storage/logs dizinini ziyaret edebilirsiniz.
+
 ## UI ve UX
 
 - Kurumsal görsel bütünlüğün sağlanmasına adına soft renkler tercih edilmiştir. 
