@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\userDetail;
 use App\Models\City;
 use App\Models\Changeticket;
+use Illuminate\Support\Facades\Log;
 
 class OperationsController extends Controller
 {
@@ -212,6 +213,12 @@ class OperationsController extends Controller
             ]);
             return redirect()->route('ticket')->with('success', 'Talebiniz başarıyla gönderildi.');
         } catch (\Exception $e) {
+            Log::channel('http_logs')->error('Talep gönderilirken bir hata oluştu (ticketSend).', [
+                'user_id' => Auth::id(),
+                'request_data' => $request->all(),
+                'exception_message' => $e->getMessage(),
+                'exception_trace' => $e->getTraceAsString(),
+            ]);
             return back()->withErrors(['error' => 'Talebiniz gönderilirken bir hata oluştu. Lütfen tekrar deneyin.']);
         }
 

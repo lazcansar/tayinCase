@@ -79,7 +79,7 @@
 
                 </form>
                 @if($errors->any())
-                    <div class="bg-amber-800 p-4 text-white rounded">
+                    <div class="bg-amber-800 p-4 my-4 text-white rounded">
                         <ul class="flex flex-col gap-2">
                             @foreach($errors->all() as $error)
                                 <li><i class="bi bi-info-circle"></i> {{ $error }}</li>
