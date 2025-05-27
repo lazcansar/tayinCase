@@ -6,7 +6,7 @@
         <div class="container mx-auto">
             @auth
                 <div class="flex flex-row items-center justify-between">
-                    <h1 class="text-white text-2xl text-center"> Personel Ekranı </h1>
+                    <h1 class="text-white text-2xl text-center">@if(Auth::user()->role == 1) Yönetici Ekranı @else Personel Ekranı @endif </h1>
                     <a href="{{ route('logout') }}" class="text-gray-800 border border-gray-300 px-2 py-1 rounded bg-sky-100 transition hover:bg-sky-50"><i class="bi bi-door-closed"></i> Çıkış Yap</a>
                 </div>
             @else
@@ -19,7 +19,7 @@
         <section class="my-8">
             <div class="container mx-auto">
                 <div class="border border-gray-200 shadow p-4 rounded">
-                    <h2 class="text-xl p-4 bg-sky-600 text-white rounded mb-4">Tayin Talepleri</h2>
+                    <h2 class="text-xl p-4 bg-sky-600 text-white rounded mb-4">Tüm Tayin Talepleri</h2>
                     <div class="overflow-x-auto shadow-md sm:rounded-lg">
                         <table class="min-w-full divide-y divide-gray-200">
                             <thead class="bg-sky-500">
