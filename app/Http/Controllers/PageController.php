@@ -16,7 +16,9 @@ class PageController extends Controller
     public function index() {
         $id = Auth::id();
         $userDetail = userDetail::whereUsersId($id)->first();
-        return view('home.index', compact('userDetail'));
+        $allTickets = Changeticket::all();
+        $cities = City::all();
+        return view('home.index', compact('userDetail', 'allTickets', 'cities'));
     }
     // Login Page
     public function login() {
