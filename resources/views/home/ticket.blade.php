@@ -1,5 +1,5 @@
 @extends('theme')
-@section('title'){{ 'Kişisel Bilgilerim' }}@endsection
+@section('title'){{ 'Tayin Talebi Oluştur' }}@endsection
 @section('main')
 
     <section class="bg-sky-800 py-4">
