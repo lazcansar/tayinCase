@@ -74,6 +74,15 @@ class OperationsController extends Controller
             ], $customMessages);
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
+
+            Log::info('Giriş işlemi başarılı şekilde gerçekleşti.', [
+                'user_id' => Auth::id(),
+                'user_name' => Auth::user()->name,
+                'ip_address' => $request->ip(),
+                'session_id' => $request->session()->getId(),
+
+            ]);
+
             return redirect()->intended('/');
         }
         return back()->withErrors([
@@ -213,7 +222,7 @@ class OperationsController extends Controller
             ]);
 
             Log::info('Talep gönderme başarılı şekilde gerçekleşti.', [
-                'user_id' => Auth::id(), // Hangi kullanıcı bu hatayı aldı?
+                'user_id' => Auth::id(),
                 'request_data' => $request->all(),
             ]);
 
