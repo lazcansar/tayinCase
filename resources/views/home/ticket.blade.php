@@ -2,7 +2,7 @@
 @section('title'){{ 'Tayin Talebi Oluştur' }}@endsection
 @section('main')
 
-    <section class="bg-sky-800 py-4">
+    <section class="bg-sky-800 py-4 px-4 lg:px-0">
         <div class="container mx-auto">
             @auth
                 <div class="flex flex-row items-center justify-between">
@@ -12,6 +12,22 @@
             @else
                 <h1 class="text-white text-2xl text-center">Personel Ekranı</h1>
             @endauth
+        </div>
+    </section>
+    <section class="bg-teal-200">
+        <div class="container mx-auto py-2">
+            <nav aria-label="breadcrumb" class="font-medium text-gray-500">
+                <ol class="list-none p-0 inline-flex space-x-2">
+                    <li class="flex items-center">
+                        <a href="{{ route('home') }}" class="hover:text-sky-700 hover:underline">Anasayfa</a>
+                    </li>
+                    <li class="flex items-center" aria-current="page">
+                        <svg class="fill-current w-3 h-3 mx-2 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="text-gray-700">Tayin Talebi Oluştur</span> </li>
+                </ol>
+            </nav>
         </div>
     </section>
 
@@ -81,7 +97,7 @@
                 <h2 class="text-xl p-4 bg-teal-600 text-white rounded mb-4">Geçmiş Tayin Talepleri</h2>
                 <div class="overflow-x-auto shadow-md sm:rounded-lg">
                     <table class="min-w-full divide-y divide-gray-200">
-                        <thead class="bg-sky-700">
+                        <thead class="bg-sky-500">
                         <tr>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
                                 Talep Türü

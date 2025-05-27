@@ -30,7 +30,6 @@
                     <img src="https://pgm.adalet.gov.tr/Assets/front/images/logo.png" alt="Adalet Bakanlığı">
                     <a href="{{ route('home') }}"><h1 class="text-3xl text-red-600 font-semibold">Personel Genel Müdürlüğü</h1></a>
                 </div>
-                <div class="email"></div>
                 <div class="social flex flex-row gap-2">
                     <a href="https://www.instagram.com/adaletpgm/"><i class="bi bi-instagram"></i></a>
                     <a href="https://www.facebook.com/AdaletPGM"><i class="bi bi-facebook"></i></a>
@@ -42,7 +41,9 @@
     </section>
 </header>
 
-@yield('main')
+<main>
+    @yield('main')
+</main>
 
 <footer>
     <div class="bg-sky-800 text-center text-gray-200 border-t border-t-gray-800 py-5">

@@ -2,7 +2,7 @@
 @section('title'){{ 'Kişisel Bilgilerim' }}@endsection
 @section('main')
 
-    <section class="bg-sky-800 py-4">
+    <section class="bg-sky-800 py-4 px-4 lg:px-0">
         <div class="container mx-auto">
             @auth
                 <div class="flex flex-row items-center justify-between">
