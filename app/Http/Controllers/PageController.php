@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\userDetail;
+use App\Models\City;
 
 class PageController extends Controller
 {
@@ -21,7 +22,8 @@ class PageController extends Controller
     }
     // Ticket Page
     public function ticket() {
-        return view('home.ticket');
+        $cities = City::all();
+        return view('home.ticket', compact('cities'));
     }
 
 }
