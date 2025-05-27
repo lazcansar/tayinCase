@@ -118,28 +118,30 @@
                         <tbody class="bg-white divide-y divide-gray-200">
                         @if($allTickets)
                         @foreach($allTickets as $ticket)
-                            <tr>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900 capitalize">{{ $ticket->changetype }}</div>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">
-                                        @foreach($cities as $city)
-                                            @if($city->id == $ticket->city_id)
-                                                {{ $city->name }}
-                                            @endif
-                                        @endforeach
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <div class="text-sm text-gray-700 max-w-xs truncate">
-                                        {{ $ticket->message }}
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">{{ $ticket->created_at }}</div>
-                                </td>
-                            </tr>
+                            @if($ticket->user_id == Auth::user()->id)
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900 capitalize">{{ $ticket->changetype }}</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">
+                                            @foreach($cities as $city)
+                                                @if($city->id == $ticket->city_id)
+                                                    {{ $city->name }}
+                                                @endif
+                                            @endforeach
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="text-sm text-gray-700 max-w-xs truncate">
+                                            {{ $ticket->message }}
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">{{ $ticket->created_at }}</div>
+                                    </td>
+                                </tr>
+                            @endif
                         @endforeach
                         @else
                             <tr>

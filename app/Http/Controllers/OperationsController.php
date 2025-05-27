@@ -19,11 +19,13 @@ class OperationsController extends Controller
         $name = 'ab204376';
         $email = 'ab204376@adalet.gov.tr';
         $password = '12345678';
+        $role = '0';
 
         $user = User::create([
             'name' => $name,
             'email' => $email,
             'password' => Hash::make($password),
+            'role' => $role,
         ]);
         return redirect()->route('login')->with('success', 'Kullanıcı kaydı başarılı şekilde oluşturuldu.');
     }

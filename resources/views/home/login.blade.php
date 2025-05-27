@@ -12,7 +12,7 @@
                 <i class="bi bi-person-bounding-box text-4xl text-sky-600 mb-4"></i>
                 <h1 class="text-xl mb-4 font-medium text-gray-800">Giriş Paneli</h1>
                 @if(session('success'))
-                    <div class="bg-amber-500 p-4 my-4 text-white rounded">
+                    <div class="w-full bg-amber-500 p-4 my-4 text-white rounded">
                         <p><i class="bi bi-info-circle"></i> {{ session('success') }}</p>
                     </div>
                 @endif
