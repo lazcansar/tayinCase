@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\OperationsController;
 
-Route::get('/', [PageController::class, 'index'])->name('home');
+Route::get('/', [PageController::class, 'index'])->name('home')->middleware('auth');
 Route::get('/tayin-talebi-olustur', [PageController::class, 'ticket'])->name('ticket');
 Route::post('/tayin-talebi-gonder', [OperationsController::class, 'ticketSend'])->name('ticketSend');
 Route::get('/giris-yap', [PageController::class, 'login'])->name('login');
