@@ -7,6 +7,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\userDetail;
 use App\Models\City;
+use App\Models\Changeticket;
+use PHPUnit\Framework\Attributes\Ticket;
 
 class PageController extends Controller
 {
@@ -23,7 +25,8 @@ class PageController extends Controller
     // Ticket Page
     public function ticket() {
         $cities = City::all();
-        return view('home.ticket', compact('cities'));
+        $allTickets = Changeticket::all();
+        return view('home.ticket', compact('cities', 'allTickets'));
     }
 
 }

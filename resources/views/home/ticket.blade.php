@@ -75,4 +75,69 @@
         </div>
     </section>
 
+    <section class="my-8">
+        <div class="container mx-auto">
+            <div class="border border-gray-200 shadow p-4 rounded">
+                <h2 class="text-xl p-4 bg-teal-600 text-white rounded mb-4">Geçmiş Tayin Talepleri</h2>
+                <div class="overflow-x-auto shadow-md sm:rounded-lg">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-sky-700">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                Talep Türü
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                Tayin İstenen Şehir
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                Mesaj
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                Oluşturulma Tarihi
+                            </th>
+                            <th scope="col" class="relative px-6 py-3">
+                                <span class="sr-only">İşlemler</span> </th>
+                        </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                        @if($allTickets)
+                        @foreach($allTickets as $ticket)
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900 capitalize">{{ $ticket->changetype }}</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">
+                                        @foreach($cities as $city)
+                                            @if($city->id == $ticket->city_id)
+                                                {{ $city->name }}
+                                            @endif
+                                        @endforeach
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <div class="text-sm text-gray-700 max-w-xs truncate">
+                                        {{ $ticket->message }}
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">{{ $ticket->created_at }}</div>
+                                </td>
+                            </tr>
+                        @endforeach
+                        @else
+                            <tr>
+                                <td colspan="5" class="px-6 py-4 text-center text-sm text-gray-500">
+                                    Gösterilecek talep bulunamadı.
+                                </td>
+                            </tr>
+                        @endif
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
 @endsection
