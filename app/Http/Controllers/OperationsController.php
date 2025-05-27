@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -9,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\Models\userDetail;
 use App\Models\City;
+use App\Models\Changeticket;
 
 class OperationsController extends Controller
 {
@@ -178,6 +180,38 @@ class OperationsController extends Controller
         City::insert($dataToInsert);
 
         return redirect()->route('login')->with('success', 'Şehirler başarılı şekilde oluşturuldu.');
+
+    }
+
+    // Insert Change Ticket
+    public function ticketSend(Request $request)
+    {
+        $validatedData = $request->validate([
+            'changetype' => ['required', 'string'],
+            'cities' => ['required', 'integer', 'exists:cities,id'], // cities tablosunda şehir id'si olmalı
+            'message' => ['required', 'string', 'min:10', 'max:1000'], // Minimum 10, maksimum 1000 karakter
+        ], [
+            'changetype.required' => 'Lütfen bir talep türü seçin.',
+            'changetype.in' => 'Geçersiz talep türü seçimi.',
+            'cities.required' => 'Lütfen bir adliye seçimi yapın.',
+            'cities.integer' => 'Adliye seçimi geçersiz.',
+            'cities.exists' => 'Seçilen adliye bulunamadı.',
+            'message.required' => 'Açıklama alanı boş bırakılamaz.',
+            'message.min' => 'Açıklama en az :min karakter olmalıdır.',
+            'message.max' => 'Açıklama en fazla :max karakter olabilir.',
+        ]);
+
+        try {
+            $ticket = Changeticket::create([
+                'user_id' => Auth::id(),
+                'changetype' => $validatedData['changetype'],
+                'city_id' => $validatedData['cities'],
+                'message' => $validatedData['message'],
+            ]);
+            return redirect()->route('ticket')->with('success', 'Talebiniz başarıyla gönderildi.');
+        } catch (\Exception $e) {
+            return back()->withErrors(['error' => 'Talebiniz gönderilirken bir hata oluştu. Lütfen tekrar deneyin.']);
+        }
 
     }
 

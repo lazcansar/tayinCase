@@ -19,17 +19,21 @@
         <div class="container mx-auto">
             <div class="border border-gray-200 shadow p-4 rounded">
                 <h2 class="text-xl p-4 bg-sky-500 text-white rounded mb-4">Tayin Talebi Oluştur</h2>
+                @if(session('success'))
+                    <div class="bg-amber-500 p-4 mb-4 text-white rounded">
+                        <p><i class="bi bi-info-circle"></i> {{ session('success') }}</p>
+                    </div>
+                @endif
 
-
-                <form action="" method="POST">
+                <form action="{{ route('ticketSend') }}" method="POST">
                     @csrf
 
                     <div class="relative w-full mb-4">
                         <select name="changetype"
                                 class="w-full appearance-none border border-gray-300 rounded-md pl-3 pr-10 py-2 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500 shadow-sm">
                             <option selected disabled>Talep Türü</option>
-                            <option value="">Tayin talebi</option>
-                            <option value="">Tayin talebim uygun görülmezse yerimde kalmak istiyorum.</option>
+                            <option value="Tayin Talebi">Tayin talebi</option>
+                            <option value="Tayin talebim uygun görülmezse yerimde kalmak istiyorum.">Tayin talebim uygun görülmezse yerimde kalmak istiyorum.</option>
                         </select>
                         <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                             <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -58,6 +62,15 @@
                     <button class="px-4 py-2 bg-sky-600 text-white rounded transition hover:bg-sky-500 cursor-pointer">Talep Gönder</button>
 
                 </form>
+                @if($errors->any())
+                    <div class="bg-amber-800 p-4 text-white rounded">
+                        <ul class="flex flex-col gap-2">
+                            @foreach($errors->all() as $error)
+                                <li><i class="bi bi-info-circle"></i> {{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
             </div>
         </div>
     </section>

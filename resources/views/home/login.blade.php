@@ -11,6 +11,11 @@
             <div class="min-w-xl flex flex-col items-center justify-center border border-gray-100 shadow-lg rounded p-4">
                 <i class="bi bi-person-bounding-box text-4xl text-sky-600 mb-4"></i>
                 <h1 class="text-xl mb-4 font-medium text-gray-800">Giriş Paneli</h1>
+                @if(session('success'))
+                    <div class="bg-amber-500 p-4 my-4 text-white rounded">
+                        <p><i class="bi bi-info-circle"></i> {{ session('success') }}</p>
+                    </div>
+                @endif
                 <form action="{{ route('login.post') }}" method="POST" class="w-full">
                     <div class="flex flex-col gap-4 w-full">
                         @csrf
