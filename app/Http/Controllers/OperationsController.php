@@ -211,8 +211,21 @@ class OperationsController extends Controller
                 'city_id' => $validatedData['cities'],
                 'message' => $validatedData['message'],
             ]);
+
+            Log::info('Talep gönderme başarılı şekilde gerçekleşti.', [
+                'user_id' => Auth::id(), // Hangi kullanıcı bu hatayı aldı?
+                'request_data' => $request->all(),
+            ]);
+
             return redirect()->route('ticket')->with('success', 'Talebiniz başarıyla gönderildi.');
         } catch (\Exception $e) {
+            Log::error('Talep gönderme sırasında bir hata oluştu.', [
+                'user_id' => Auth::id(), // Hangi kullanıcı bu hatayı aldı?
+                'request_data' => $request->all(), // Hangi verilerle hata alındı? (Hassas veri olmamasına dikkat edin)
+                'exception_message' => $e->getMessage(),
+                'exception_trace' => $e->getTraceAsString(), // Daha detaylı hata takibi için (log dosyasını büyütebilir)
+            ]);
+
             return back()->withErrors(['error' => 'Talebiniz gönderilirken bir hata oluştu. Lütfen tekrar deneyin.']);
         }
 
