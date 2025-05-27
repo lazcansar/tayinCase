@@ -47,7 +47,7 @@
 <footer>
     <div class="bg-sky-800 text-center text-gray-200 border-t border-t-gray-800 py-5">
         <span class="block">Copyright &copy {{ date("Y") }} - Personel Tayin Talebi Uygulaması. Tüm hakları saklıdır.</span>
-        <a href="https://afyazilim.com" target="_blank" class="block hover:text-white text-sm transition mt-3">
+        <a href="mailto:abdullahgoksal@outlook.com" target="_blank" class="block hover:text-white text-sm transition mt-3">
             Tasarım ve Kodlaması <span class="font-medium"><i class="bi bi-code-slash text-gray-50"></i> Abdullah GÖKSAL - 204376</span> tarafından yapılmıştır.
         </a>
     </div>

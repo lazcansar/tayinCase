@@ -15,7 +15,13 @@ class PageController extends Controller
         $userDetail = userDetail::whereUsersId($id)->first();
         return view('home.index', compact('userDetail'));
     }
+    // Login Page
     public function login() {
         return view('home.login');
     }
+    // Ticket Page
+    public function ticket() {
+        return view('home.ticket');
+    }
+
 }

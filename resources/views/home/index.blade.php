@@ -82,7 +82,7 @@
         <div class="container mx-auto">
             <div class="border border-gray-200 shadow p-4 rounded">
                 <h2 class="text-xl p-4 bg-sky-500 text-white rounded mb-4">Talep Ekranı</h2>
-                <a href="" class="px-4 py-2 inline-block bg-teal-700 transition hover:bg-teal-600 text-white">Tayin Talebinde Bulun!</a>
+                <a href="{{ route('ticket') }}" class="px-4 py-2 inline-block bg-teal-700 transition hover:bg-teal-600 text-white">Tayin Talebinde Bulun!</a>
             </div>
         </div>
     </section>
