@@ -10,3 +10,4 @@ Route::post('/giris-yap', [OperationsController::class, 'loginUser'])->name('log
 Route::get('/kullanici-olustur', [OperationsController::class, 'regUser'])->name('register');
 Route::get('/kullanici-detay-olustur', [OperationsController::class, 'regUserDetail'])->name('register.detail');
 Route::get('/cikis-yap', [OperationsController::class, 'logout'])->name('logout');
+Route::get('/sehir-olustur', [OperationsController::class, 'insertCity'])->name('city-generate');
